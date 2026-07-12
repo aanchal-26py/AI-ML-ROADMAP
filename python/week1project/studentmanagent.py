@@ -31,21 +31,25 @@ def display_student(roll):
 def search_student(roll):
     if roll in d:
         print("yes this student exist")
-        print("you want to see detail:")
-        print('''1.yes
-        2.no''')
+        print("""you want to see detail:")
+        1.yes
+        2.no""")
         c=int(input("="))
         if c==1:
             display_student(roll)
     else:
         print("This student name doe not exist")
+def delete_student(roll):
+    del d[roll]
+    print("Student deleted succsefully")
 choice=0
-while choice!=4:
+while choice!=5:
     print('''====== MENU ======
 1. Add Student
 2. Display Students
 3. Search Student
-4. Exit''')
+4. Delete Student
+5.Exit''')
     choice=int(input("Enter your choice="))
     if choice == 1:
         roll=int(input("Enter student Roll no.="))
@@ -61,6 +65,10 @@ while choice!=4:
         roll=int(input("Enter student Roll no.="))
         search_student(roll)
     elif choice == 4:
+        roll=int(input("Enter student Roll no.="))
+        delete_student(roll)
+    elif choice == 5:
         print("Thankyou!!")
+
     else:
         print("Enter correct value")
