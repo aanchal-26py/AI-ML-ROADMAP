@@ -44,7 +44,7 @@ def delete_student(roll):
     print("Student deleted succsefully")
 choice=0
 while choice!=5:
-    print('''====== MENU ======
+    print('''\n\n====== MENU ======
 1. Add Student
 2. Display Students
 3. Search Student
