@@ -50,25 +50,29 @@ while choice!=5:
 3. Search Student
 4. Delete Student
 5.Exit''')
-    choice=int(input("Enter your choice="))
-    if choice == 1:
-        roll=int(input("Enter student Roll no.="))
-        name=input("Enter student name=")
-        branch=input("Enter student branch=")
-        year=int(input("Enter student year="))
-        detail=detailadd(name,branch,year)
-        add_student(roll,detail)
-    elif choice == 2:
-        roll=int(input("Enter student Roll no.="))
-        display_student(roll)
-    elif choice == 3:
-        roll=int(input("Enter student Roll no.="))
-        search_student(roll)
-    elif choice == 4:
-        roll=int(input("Enter student Roll no.="))
-        delete_student(roll)
-    elif choice == 5:
-        print("Thankyou!!")
-
+    try:
+        choice=int(input("Enter your choice="))
+    except ValueError:
+        print("Invalid input")
     else:
-        print("Enter correct value")
+        if choice == 1:
+            roll=int(input("Enter student Roll no.="))
+            name=input("Enter student name=")
+            branch=input("Enter student branch=")
+            year=int(input("Enter student year="))
+            detail=detailadd(name,branch,year)
+            add_student(roll,detail)
+        elif choice == 2:
+            roll=int(input("Enter student Roll no.="))
+            display_student(roll)
+        elif choice == 3:
+            roll=int(input("Enter student Roll no.="))
+            search_student(roll)
+        elif choice == 4:
+            roll=int(input("Enter student Roll no.="))
+            delete_student(roll)
+        elif choice == 5:
+            print("Thankyou!!")
+
+        else:
+            print("Enter correct value")
