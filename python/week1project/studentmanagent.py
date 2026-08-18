@@ -38,7 +38,7 @@ def search_student(roll):
         if c==1:
             display_student(roll)
     else:
-        print("This student name doe not exist")
+        print("This student name does not exist")
 def delete_student(roll):
     del d[roll]
     print("Student deleted succsefully")
